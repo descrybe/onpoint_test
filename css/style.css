@@ -10,7 +10,7 @@ body {
     position: fixed;
     right: 0;
     top: 50%;
-    transform: translateY(-384px);
+    transform: translateY(-50%);
     z-index: 999;
     list-style: none;
 }
