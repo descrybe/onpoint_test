@@ -63,26 +63,78 @@ li.active {
     opacity: .5;
     background-color: transparent;
     border: 2px solid #cd223c;
+    position: absolute;
 }
     .goal {
         width: 60px;
         height: 60px;
+        margin:-5px 0 0 557px;
+        animation: goal_lights 1.2s linear infinite;
     }
     .hypo {
-        margin-top: 4rem;
-        width: 35px;
-        height: 35px;
+        margin: 106px 0 0 266px;
+        width: 40px;
+        height: 40px;
+        animation: hypo_lights 1s linear infinite;
     }
     .compl {
-        margin-top: .8rem;
+        margin: 164px 0 0 814px;
         width: 25px;
         height: 25px;
+        animation: compl_lights .8s linear infinite;
     }
     .risks {
-        margin-top: -3.9rem;
+        margin: 150px 0 0 473px;
         width: 25px;
         height: 25px;
+        animation: compl_lights .8s linear infinite;
     }
+
+@keyframes goal_lights {
+    from {
+        transform: translate(20px, 20px);
+        width: 15px;
+        height: 15px;
+        background-color: #f16c2e;
+        opacity: 1;
+    }
+
+    to {
+        width: 60px;
+        height: 60px;
+        opacity: .2;
+    }
+}
+@keyframes hypo_lights {
+    from {
+        transform: translate(14px, 14px);
+        width: 10px;
+        height: 10px;
+        background-color: #f16c2e;
+        opacity: 1;
+    }
+
+    to {
+        width: 40px;
+        height: 40px;
+        opacity: .2;
+    }
+}
+@keyframes compl_lights {
+    from {
+        transform: translate(10px, 10px);
+        width: 6px;
+        height: 6px;
+        background-color: #f16c2e;
+        opacity: 1;
+    }
+
+    to {
+        width: 25px;
+        height: 25px;
+        opacity: .2;
+    }
+}
 
 .scrolldown {
     margin-top: 678px;
