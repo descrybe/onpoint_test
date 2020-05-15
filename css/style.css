@@ -1,21 +1,26 @@
 body {
     padding: 0;
     margin: 0;
-    font-family: "MontserratRegular";
-    width: 1024px;
-    height: 768px;
-    max-width: 1024px;
+    font-family: "MontserratRegular";    
+    box-sizing: border-box;
 }
 
-#pagination {
+/* Пагинация */
+.pagination {
     position: fixed;
-    right: 0px;
-    margin-top: 370px;
-    vertical-align: middle;
+    right: 0;
+    top: 50%;
+    transform: translateY(-384px);
     z-index: 999;
+    list-style: none;
 }
 
-.page {
+.pagination ul {
+    list-style: none;
+}
+
+.pagination ul li {
+    cursor: pointer;
     width: 12px;
     height: 12px;
     margin-top: 4px;
@@ -23,17 +28,21 @@ body {
     border-radius: 50%;
     background-color: #fff;
 }
-    .active {
-        background-color: #f78b1f;
-    }
 
-#first {
+li.active {
+    background-color: #f78b1f;
+}
+
+/* /Пагинация */
+
+#first-slide {
+    position: relative;
     padding: 0;
     margin: 0;
     width: 1024px;
     height: 768px;
     background: url(../img/first_bg.png);    
-    background-size: cover;
+    background-size: 100% 100%;
     z-index: 1;
 }
 
@@ -41,8 +50,13 @@ body {
     padding-top: 9rem;
     padding-left: 5rem;
     font-size: 3rem;
-    color: #0d319c;
 }
+    .top {
+        color: #0d319c;
+    }
+    .simple {
+        color: #fff;
+    }
 
 .anima {
     border-radius: 50%;
@@ -51,118 +65,143 @@ body {
     border: 2px solid #cd223c;
 }
     .goal {
-        margin-left: 34.7rem;
         width: 60px;
         height: 60px;
     }
     .hypo {
         margin-top: 4rem;
-        margin-left: 16.8rem;
         width: 35px;
         height: 35px;
     }
     .compl {
         margin-top: .8rem;
-        margin-left: 51rem;
         width: 25px;
         height: 25px;
     }
     .risks {
         margin-top: -3.9rem;
-        margin-left: 29.6rem;
         width: 25px;
         height: 25px;
     }
 
-#second {
-    position: absolute;
-    width: 1024px;
-    height: 768px;
-    background: url(../img/second_bg.png);
-    background-size: cover;
-    z-index: 1;
-}
-
-#text2 {
+.scrolldown {
+    margin-top: 678px;
     text-align: center;
+    position: absolute;
+    z-index: 999;
+    width: 1024px;
+    height: 90px;
+    background: url(../img/next.png);
+    background-size: 100% 100%;
     color: #fff;
-    font-size: 3rem;
-    margin: 35vh 0;
+    font-weight: bold;
 }
+    .scrolldown p {
+        margin-left: 3rem;
+    }
 
-#pieces {
+#second-slide {
     position: relative;
     width: 1024px;
     height: 768px;
-    background: url(../img/ice_pieces.png);
-    background-size: cover;
-    z-index: 10;
+    background: url(../img/second_bg.png);
+    background-size: 100% 100%;
 }
 
-#carusel {
-    position: absolute;
+#secondtext {
+    padding-top: 245px;
+    text-align: center;
+    color: #fff;
+    font-size: 3rem;
 }
 
-.links_complex {
+.third-slide {
     width: 1024px;
     height: 768px;
-    background: url(../img/complexlinks_bg.png);
+    background: url(../img/slides_bg.png);
     background-size: cover;
+}
+
+.carousel-container {
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    margin: auto;
+    width: 1024px;
+    height: 768px;
+}
+
+.carousel-slide {
+    display: flex;
+}
+
+.complex {
+    width: 1024px;
+    height: 768px;
+    flex: 0 0 auto; 
+    background: url(../img/tab_3.png);
+    background-size: cover;
+    background-position: center;
 }
 
 .octet {
     width: 1024px;
-    height: 768px;
-    background: url(../img/octet_bg.png);
+    height: 768;
+    flex: 0 0 auto; 
+    background: url(../img/tab_2.png);
     background-size: cover;
+    background-position: center;
 }
 
-.simple_links {
+.simple {
     width: 1024px;
     height: 768px;
-    background: url(../img/simplelinks_bg.png);
+    flex: 0 0 auto; 
+    background: url(../img/tab_1.png);
     background-size: cover;
-    overflow: hidden;
+    background-position: center;
 }
 
-.scrolldown {
-    margin-top: 6.5rem;
-    text-align: center;
-    color: #fff;
-    font-weight: bold;
+.toggle-wrapper {
+    position: relative;
+    z-index: 999;
+    top: 88%;
 }
-    /* ---скролл оранжевый
-    .scrolldown:hover {
-        background-color: #ec8829;
-    } */
 
 #toggle {
-    width: 640px;
-    height: 15px;
-    background-color: #435063;
     position: relative;
-    z-index: 5;
-    margin-top: 500px;
-}
-
-#toggle_range {
-    margin: 0;
     padding: 0;
-    width: 100%;
+    margin: 0 0 0 12rem;
+    width: 635px;
+    height: 11px;
     -webkit-appearance: none;
-    background: transparent;
+    background: linear-gradient(90deg, #435063, #435063) ;
+    z-index: 999;
+    outline:none;
 }
 
-#toggle_range::-webkit-slider-thumb {
+#toggle::-webkit-slider-thumb {
     -webkit-appearance: none;
     background: url(../img/toggle_icon.png) no-repeat;
     background-size: cover;
     height: 40px;
     width: 30px;
-    border-radius: 3px;
     cursor: pointer;
-    margin-top: -10px; 
+    margin-top: 4px;
 }
+
+.years {
+    position: relative;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    margin-top: 40px;
+} 
+    .years > div {
+        margin: 0 8rem 0 8rem;
+    }
 
 #scrolled {
     background-color: #d1eaff;
@@ -182,7 +221,7 @@ body {
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (-webkit-min-device-pixel-ratio: 1) {
-
+    
 }
 
 /* Portrait */
@@ -200,7 +239,22 @@ body {
   and (max-device-width: 1024px) 
   and (orientation: landscape) 
   and (-webkit-min-device-pixel-ratio: 1) {
-
+    html{
+        -webkit-transform: rotate(-90deg);
+           -moz-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+             -o-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+        -webkit-transform-origin: left top;
+           -moz-transform-origin: left top;
+            -ms-transform-origin: left top;
+             -o-transform-origin: left top;
+                transform-origin: left top;
+        width: 1024px; 
+        position: absolute;
+        top: 100%;
+        left: 0
+    }
 }
 
 /* ----------- iPad 1 and 2 ----------- */
